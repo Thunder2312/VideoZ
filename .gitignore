@@ -1,0 +1,12 @@
+# Backend
+
+backend/.env
+backend/processed/
+
+node_modules/
+backend/node_modules/
+frontend/videoz/node_modules/
+uploads/
+.DS_Store
+dist/
+build/

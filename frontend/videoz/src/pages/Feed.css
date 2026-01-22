@@ -1,0 +1,75 @@
+/* Feed.css */
+
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden; /* Prevent the whole page from scrolling, only the feed should scroll */
+}
+
+.feed {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  background-color: black;
+  
+  /* Hide scrollbars */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.feed::-webkit-scrollbar { 
+  display: none; 
+}
+
+.reel {
+  height: 100vh; /* FORCE full height */
+  width: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden; /* Cut off anything that spills out */
+}
+
+/* Logout Button Fix */
+.logout-btn {
+position: fixed;
+top: 20px;
+right: 20px;
+z-index: 9999; /* Ensure it's on top of everything */
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: 1px solid rgba(255, 255, 255, 0.5);
+padding: 8px 16px;
+border-radius: 20px;
+font-size: 14px;
+cursor: pointer;
+backdrop-filter: blur(4px);
+}
+
+/* Create Button Fix */
+.create-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  z-index: 9999;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Desktop View Wrapper */
+@media (min-width: 768px) {
+  .feed {
+      width: 450px; 
+      margin: 0 auto;
+      border-left: 1px solid #333;
+      border-right: 1px solid #333;
+  }
+  
+  /* On desktop, keep logout button inside or near the feed */
+  .logout-btn {
+      right: calc(50% - 215px); /* Position relative to the centered feed */
+  }
+}
